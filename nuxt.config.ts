@@ -4,6 +4,9 @@ export default defineNuxtConfig({
   build: {
     transpile: ["vuetify"],
   },
+  nitro: {
+    compressPublicAssets: true,
+  },
   app: {
     head: {
       link: [
