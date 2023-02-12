@@ -1,5 +1,9 @@
+import vuetify from "vite-plugin-vuetify";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  ssr: true,
+  components: true,
   css: ["vuetify/lib/styles/main.sass"],
   build: {
     transpile: ["vuetify"],
@@ -7,14 +11,13 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
   },
-  app: {
-    head: {
-      link: [
-        {
-          href: "https://cdn.jsdelivr.net/npm/@mdi/font@5.x/css/materialdesignicons.min.css",
-          rel: "stylesheet",
-        },
-      ],
+  modules: [
+    "@nuxt/content",
+    "@nuxt/image-edge",
+    async (_, nuxt) => {
+      nuxt.hooks.hook("vite:extendConfig", (config: any) =>
+        config.plugins.push(vuetify())
+      );
     },
-  },
+  ],
 });
