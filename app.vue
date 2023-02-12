@@ -1,3 +1,5 @@
 <template>
-  <v-btn prepend-icon="mdi-pencil">TEST</v-btn>
+  <v-btn prepend-icon="mdi-pencil">
+    TEST
+  </v-btn>
 </template>
