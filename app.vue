@@ -1,5 +1,3 @@
 <template>
-  <div>
-    <NuxtWelcome />
-  </div>
+  <v-btn prepend-icon="mdi-pencil">TEST</v-btn>
 </template>
