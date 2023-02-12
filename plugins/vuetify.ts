@@ -6,6 +6,9 @@ import * as directives from "vuetify/directives";
 
 export default defineNuxtPlugin((nuxtApp: any) => {
   const vuetify = createVuetify({
+    ssr: true,
+    components,
+    directives,
     icons: {
       defaultSet: "mdi",
       aliases,
@@ -13,8 +16,6 @@ export default defineNuxtPlugin((nuxtApp: any) => {
         mdi,
       },
     },
-    components,
-    directives,
   });
   nuxtApp.vueApp.use(vuetify);
 });
